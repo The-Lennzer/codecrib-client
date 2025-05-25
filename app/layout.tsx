@@ -1,6 +1,24 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Sora, Space_Grotesk, Lato } from 'next/font/google'
 import "./globals.css";
+
+const spg = Space_Grotesk({
+  subsets: ['latin'], 
+  weight: ['400', '600', '700'],
+  variable: '--font-space-grotesk',
+})
+
+const lato = Lato({
+  subsets: ['latin'], 
+  weight: ['400', '700'],
+  variable: '--font-lato',
+})
+const sora = Sora({ 
+  subsets: ['latin'], 
+  weight: ['400', '600', '700'],
+  variable: '--font-sora', 
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lato.variable} antialiased`}
       >
         {children}
       </body>
