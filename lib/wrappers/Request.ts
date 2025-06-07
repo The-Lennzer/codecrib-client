@@ -3,9 +3,9 @@ import axios, { AxiosError, AxiosInstance } from 'axios';
 const Request = axios.create({
     baseURL: 'http://localhost:5000/api/v1',
     timeout: 10000,
+    withCredentials: true,
     headers: {
     'Content-Type': 'application/json',
-    withCredentials: true
   },
 })
 
@@ -18,7 +18,7 @@ Request.interceptors.request.use(
 
 Request.interceptors.response.use(
  (response) => {
-    return response.data;
+    return response;
  },
    (error: AxiosError) => {
     console.error('[API ERROR]', error.response?.status, error.message)

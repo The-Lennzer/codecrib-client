@@ -1,15 +1,11 @@
-import Request from "@/lib/Request";
+import Request from "@/lib/wrappers/Request";
 import { register } from "module";
+import { userRegister, userLogin } from "./typefaces";
 
-export type User = {
-    name: string;
-    username: string;
-    email: string;
-    password: string;
-}
 const Api = {
-    getResource: () =>Request.get('/resource'),
-    registerUser: (data: User): Promise<any> => Request.post('/auth/register', data)
+    registerUser: (data: userRegister): Promise<any> => Request.post('/auth/register', data),
+    loginUser: (data: userLogin): Promise<any> => Request.post('/auth/login', data),
+    getUser: (): Promise<any> => Request.post('/auth/hydrate')
 }
 
 export default Api;
