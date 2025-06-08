@@ -1,7 +1,10 @@
 "use client";
 import { RiAccountCircle2Line } from "react-icons/ri";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { use } from "react";
 export default function Navbar(){
+    const router = useRouter();
     return (
         <div className="h-[56px] bg-orange-600 min-w-[95%] fixed mt-4 z-[999] rounded-xl border-b-[1px] shadow-md">
             <div className="flex justify-between items-center h-full ml-auto pl-12 pr-4">
@@ -16,7 +19,7 @@ export default function Navbar(){
                     <div>Browse</div>
                     <div>Blogs</div>
                     <div>Create</div>
-                    <div>Login</div>
+                    <div className="hover:cursor-pointer" onClick={() => {router.push('/auth/login')}}>Login</div>
                     <div className="text-[#242424]">
                         <RiAccountCircle2Line size={25}/>
                     </div>

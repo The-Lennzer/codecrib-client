@@ -1,13 +1,13 @@
 "use client";
 
 import withAuth from "@/lib/wrappers/auth";
+import CreateProject from "@/components/project/Create";
 
-function CreateProject() {
+function Create() {
+
     return (
-        <div className="text-black text-2xl font-bold">
-            <span>
-                Create Project
-            </span>
+        <div className="flex justify-center items-center">
+            <CreateProject />
         </div>
     );
 }

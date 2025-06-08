@@ -13,7 +13,7 @@ export default function LoginBox(){
         console.log(res.data);
         console.log(res.status);
         if(res.status === 200){ 
-            router.push('/projects/create-project');
+            router.push('/projects/create');
         }
     }   
 
